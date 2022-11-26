@@ -1,6 +1,7 @@
 <header>
     <app-menu></app-menu>
 </header>
+
 <div class="banner">
     <div class="container">
         <div class="row">
@@ -10,11 +11,29 @@
         </div>
     </div>
 </div>
+
 <section>
     <hr>
     <app-ofertahoteles></app-ofertahoteles>
     <hr>
 </section>
+
+<section>
+    <div class="container mb-3">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div *ngFor="let auxiliar of habitaciones" class="col">
+                <div class="card h-100 shadow p-3">
+                    <img src={{auxiliar.fotografias[0]}} alt="" class="img-fluid w-100 h-100">
+                    <h2 class="mt-2">{{auxiliar.nombre}}</h2>
+                    <p>{{auxiliar.descripcion}}</p>
+                    <p>Numero maximo de personas: {{auxiliar.numeroMaximoPersonas}}</p>
+                    <p>Valor de noche: {{auxiliar.valorNoche}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
 <footer>
     <app-footer></app-footer>
 </footer>

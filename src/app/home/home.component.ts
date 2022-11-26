@@ -8,9 +8,12 @@ import { HabitacionesService } from '../services/habitaciones.service';
 })
 export class HomeComponent{
 
+  habitaciones:any[] = []
+
   constructor(public servicio:HabitacionesService) { 
     this.servicio.consultarHabitaciones().subscribe(respuesta=>{
-        console.log(respuesta)
+        console.log(respuesta.datos)
+        this.habitaciones=respuesta.datos
     })
   }
 }
